@@ -1,16 +1,50 @@
-# React + Vite
+# Health Tracker PWA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal health tracking Progressive Web App built with React, deployed on GitHub Pages with Google Sheets sync.
 
-Currently, two official plugins are available:
+🔗 **Live Demo**: [lilsycz.github.io/health-tracker](https://lilsycz.github.io/health-tracker/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Training Log** — Track workouts across A/B/C day splits with set-by-set checkboxes; separate cardio tab
+- **Meal Tracking** — Per-ingredient nutrition calculation with fixed breakfast and snack modules
+- **Google Sheets Sync** — Data syncs to a personal Google Sheet via Apps Script webhook
+- **PWA Support** — Installable on mobile, works offline
+- **Auto Reset** — Daily records reset automatically at midnight
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React (Vite)
+- localStorage for persistence
+- Google Apps Script (Sheets webhook)
+- GitHub Actions for CI/CD
+- GitHub Pages for hosting
+
+---
+
+## Known Issues
+
+- iOS Safari may cache a stale Service Worker — fix by clearing site data in Safari settings and hard-refreshing
+
+---
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+## Deployment
+
+Automatically deployed to GitHub Pages via GitHub Actions on push to `main`.
+
+```bash
+npm run build
+```
